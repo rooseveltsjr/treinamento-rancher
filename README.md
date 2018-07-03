@@ -1,1 +1,1 @@
-# treinamento-rancher
+# rancher-catalog

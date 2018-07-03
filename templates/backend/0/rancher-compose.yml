@@ -5,19 +5,19 @@
   uuid: backend-1
   minimum_rancher_version: 1.6
   questions:
-    - variable: "mongo-db-name"
+    - variable: "mongo_db_name"
       description: "criar um novo banco"
       label: "Mongo DB Name:"
       required: true
       default: 'db-teste'
       type: "string"
-    - variable: "mongoclient-port"
+    - variable: "mongoclient_port"
       description: "passar a porta do mongoclient"
       label: "MongoClient Port:"
       required: true
       default: 2000
       type: "int"
-    - variable: "nodered-port"
+    - variable: "nodered_port"
       description: "passar a porta do nodered"
       label: "NodeRed Port:"
       required: true
@@ -38,12 +38,12 @@ services:
       - priority: 1
         protocol: http
         service: mongo-client
-        source_port: ${mongoclient-port}
+        source_port: ${mongoclient_port}
         target_port: 3000
       - priority: 2
         protocol: http
         service: node-red
-        source_port: ${nodered-port}
+        source_port: ${nodered_port}
         target_port: 1880
     health_check:
       healthy_threshold: 2
